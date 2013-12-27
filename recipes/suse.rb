@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: vim
-# Recipe:: default
+# Cookbook Name:: locales
+# Recipe:: suse
 #
 # Copyright 2013, Thomas Boerger
 #
@@ -17,11 +17,11 @@
 # limitations under the License.
 #
 
-case node["platform_family"]
-when "debian"
-  include_recipe "locales::debian"
-when "ubuntu"
-  include_recipe "locales::debian"
-when "suse"
-  include_recipe "locales::suse"
+execute "locales_update" do
+  command "localectl set-locale LANG=#{node["locales"]["lang"]}"
+  action :run
+
+  not_if do
+    `localectl | head -n1`.strip =~ /LANG=#{node["locales"]["lang"]}/
+  end
 end
