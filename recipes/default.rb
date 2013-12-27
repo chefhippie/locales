@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: vim
+# Cookbook Name:: locales
 # Recipe:: default
 #
 # Copyright 2013, Thomas Boerger
