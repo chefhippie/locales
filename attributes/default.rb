@@ -34,22 +34,6 @@ when "debian"
 
   default["locales"]["lang"] = "en_US.UTF-8"
   default["locales"]["generate_file"] = "/etc/locale.gen"
-when "ubuntu"
-  default["locales"]["packages"] = %w(
-    locales
-  )
-
-  default["locales"]["generate"] = [
-    "en_US ISO-8859-1",
-    "en_US.ISO-8859-15 ISO-8859-15",
-    "en_US.UTF-8 UTF-8",
-    "de_DE ISO-8859-1",
-    "de_DE@euro ISO-8859-15",
-    "de_DE.UTF-8 UTF-8"
-  ]
-
-  default["locales"]["lang"] = "en_US.UTF-8"
-  default["locales"]["generate_file"] = "/etc/locale.gen"
 when "suse"
   default["locales"]["lang"] = "en_US.utf8"
 end

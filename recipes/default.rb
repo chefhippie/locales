@@ -20,8 +20,6 @@
 case node["platform_family"]
 when "debian"
   include_recipe "locales::debian"
-when "ubuntu"
-  include_recipe "locales::debian"
 when "suse"
   include_recipe "locales::suse"
 end
